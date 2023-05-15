@@ -7,8 +7,8 @@ export const getPictures = (search, page) => {
     q: search,
     page: page,
     key: KEY,
-    image_type: photo,
-    orientation: horizontal,
+    image_type: 'photo',
+    orientation: 'horizontal',
     per_page: PICTURES_ON_PAGE,
   };
   return fetch(`${URL}?${params}`);

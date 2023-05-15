@@ -61,7 +61,7 @@ img {
 /*
  * Стили компонента SearchForm
  */
-.SearchForm {
+.Form {
   display: flex;
   align-items: center;
   width: 100%;
