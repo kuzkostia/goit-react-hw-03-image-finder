@@ -25,5 +25,5 @@ export const ImageGalleryItem = ({ images, togleModal }) => {
 };
 
 ImageGalleryItem.propTypes = {
-  images: PropTypes.arrayOf(PropTypes.object).isRequired,
+  images: PropTypes.arrayOf(PropTypes.shape).isRequired,
 };
