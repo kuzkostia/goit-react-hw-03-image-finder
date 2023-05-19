@@ -1,32 +1,27 @@
-import { Component } from 'react'; // для класового компонента
-import { createPortal } from 'react-dom'; // для рендеринга в іншому місці
-import css from './Modal.module.css'; // стилізація
+import { Component } from 'react';
+import { createPortal } from 'react-dom';
+import css from './Modal.module.css';
 
-// Пошук модалки щоб динамічно додати до DOM-дерева сторінки
-const modalRoot = document.querySelector('#modal-root');
+const modalRoot = document.getElementById('root');
 
 export class Modal extends Component {
-  // реєструє обробник події keydown на вікні браузера
   componentDidMount() {
-    window.addEventListener('keydown', this.keyDown); // при натисканні клавіші Escape викликає функцію keyDown
+    window.addEventListener('keydown', this.keyDown);
   }
 
   keyDown = evt => {
-    // перевірка коду клавіші
     if (evt.code === 'Escape') {
-      this.props.closeModal(); // закриття модалки
+      this.props.closeModal();
     }
   };
 
   componentWillUnmount() {
-    window.removeEventListener('keydown', this.keyDown); // видаляє обробник події keydown з вікна браузера
+    window.removeEventListener('keydown', this.keyDown);
   }
 
-  // закриття модалки по кліку на бекдроп
   handleClose = evt => {
-    // перевірка чи клік був по бекдропу
     if (evt.currentTarget === evt.target) {
-      this.props.closeModal(); // закриття модалки
+      this.props.closeModal();
     }
   };
 
@@ -34,7 +29,6 @@ export class Modal extends Component {
     return createPortal(
       <div onClick={this.handleClose} className={css.Overlay}>
         <div className={css.Modal}>{this.props.children}</div>{' '}
-        {/* рендеринг дочірніх елементів */}
       </div>,
       modalRoot
     );

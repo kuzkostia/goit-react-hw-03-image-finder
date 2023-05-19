@@ -1,6 +1,5 @@
-import { ColorRing } from 'react-loader-spinner'; // анімований спінер з бібліотеки
+import { ColorRing } from 'react-loader-spinner';
 
-// використовується в компонентах, де потрібно показати що дані завантажуються
 export const Loader = () => {
   return (
     <ColorRing

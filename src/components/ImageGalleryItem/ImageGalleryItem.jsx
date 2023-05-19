@@ -1,13 +1,10 @@
-import css from './ImageGalleryItem.module.css'; // імпортуємо стилі
-import PropTypes from 'prop-types'; // типизація пропсів
+import css from './ImageGalleryItem.module.css';
+import PropTypes from 'prop-types';
 
-// Функціональний компонент, який відповідає за елемент галереї.
 export const ImageGalleryItem = ({ images, togleModal }) => {
   return (
     <>
-      {/* Перебираємо масив зображень і виводимо їх на сторінку. */}
       {images.map(item => (
-        // При кліку на елемент галереї викликаємо функцію togleModal, яка відкриває модальне вікно.
         <li
           key={item.id}
           onClick={evt => {
@@ -27,7 +24,6 @@ export const ImageGalleryItem = ({ images, togleModal }) => {
   );
 };
 
-// типизація пропсів
 ImageGalleryItem.propTypes = {
-  images: PropTypes.arrayOf(PropTypes.object).isRequired, // масив об'єктів
+  images: PropTypes.arrayOf(PropTypes.object).isRequired,
 };

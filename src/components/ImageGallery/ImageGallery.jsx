@@ -1,8 +1,7 @@
-import { ImageGalleryItem } from 'components/ImageGalleryItem/ImageGalleryItem'; // елемент галереї
-import PropTypes from 'prop-types'; // типизація пропсів
-import css from './ImageGallery.module.css'; // імпортуємо стилі
+import { ImageGalleryItem } from 'components/ImageGalleryItem/ImageGalleryItem';
+import PropTypes from 'prop-types';
+import css from './ImageGallery.module.css';
 
-// Функціональний компонент, який відповідає за галерею.
 export const ImageGallery = ({ images, togleModal }) => {
   return (
     <>
@@ -13,8 +12,7 @@ export const ImageGallery = ({ images, togleModal }) => {
   );
 };
 
-// типизація пропсів
 ImageGallery.propTypes = {
-  images: PropTypes.arrayOf(PropTypes.object).isRequired, // масив об'єктів
-  togleModal: PropTypes.func.isRequired, // функція
+  images: PropTypes.arrayOf(PropTypes.object).isRequired,
+  togleModal: PropTypes.func.isRequired,
 };
