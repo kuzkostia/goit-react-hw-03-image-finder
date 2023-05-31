@@ -64,15 +64,20 @@ export class App extends Component {
   };
 
   handleSubmit = search => {
-    this.setState({
-      search,
-      images: [],
-      page: 1,
-      total: 1,
-      loading: false,
-      error: null,
-      empty: false,
-    });
+    if (search !== this.state.search) {
+      this.setState({
+        searchInput: search,
+        search,
+        images: [],
+        page: 1,
+        total: 1,
+        loading: false,
+        error: null,
+        empty: false,
+      });
+    } else {
+      alert('Пошукове слово не змінилось. Спробуйте ввести інше.')
+    }
   };
 
   closeModal = () => {
